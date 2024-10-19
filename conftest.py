@@ -2,7 +2,7 @@ import pytest
 from selene import browser
 
 
-@pytest.fixture(scope="module")
+@pytest.fixture(scope="session", autouse=True)
 def browser_select():
     browser.config.driver_name = 'firefox'
     print('Браузер стартует')
